@@ -1,0 +1,6 @@
+id,name,prefab,damage,rof,clipsize
+1,AK12,w_ak12,5,0.45,24
+2,AK12GL,w_ak12_gl,5,0.55,36
+3,AWP,w_awp,8,0.75,0
+4,G36K,w_g36k,7,0.35,24
+5,MP7,w_mp7,2,0.25,56

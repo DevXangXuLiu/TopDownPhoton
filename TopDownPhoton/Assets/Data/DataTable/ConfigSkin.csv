@@ -1,0 +1,6 @@
+id,name,head,extra,body,leg,hp,prefab
+1,A1A,Head_A1,extra_equip_A,Body_A,Legs_A,200,Skin_1
+2,B1B,Head_B1,extra_equip_B,Body_B,Legs_B,200,Skin_2
+3,C1C,Head_C1,extra_equip_C,Body_K,Legs_C,200,Skin_3
+4,D1PACK,Head_D1,extra_light_backpack,Body_J,Legs_A,200,Skin_4
+5,E1PACK,Head_E1,extra_backpack,Body_I,Legs_B,200,Skin_5
