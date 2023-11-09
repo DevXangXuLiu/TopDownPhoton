@@ -54,6 +54,52 @@ public abstract class ASDataTable<T> : ASDataTableOrigin where T : class
         }
 
         List<List<string>> grid = SplitCSVFile(textData);
+        Type type = typeof(T);
+        FieldInfo[] members = type.GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+        for(int i=1;i<grid.Count;i++)
+        {
+            string jsonText = string.Empty;
+            jsonText = "{";
+            for(int j=0; j<members.Length; j++)
+            {
+                FieldInfo fieldInfo = members[j];
+                if(j>0)
+                {
+                    jsonText += ",";
+                }
+                jsonText += "\"" + fieldInfo.Name + "\":" + "\"" + grid[i][j] + "\"";
+            }
+            jsonText += "}";
+            T dataRecord = JsonUtility.FromJson<T>(jsonText);
+            records.Add(dataRecord);
+        }
+        records.Sort(recordCompare);
+    }
+
+    public override string GetCSVData()
+    {
+        string s = string.Empty;
+        Type mType = typeof(T);
+        FieldInfo[] fieldInfos = mType.GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+        for(int x=0; x<fieldInfos.Length; x++)
+        {
+            if (x > 0)
+                s += ",";
+            s += fieldInfos[x].Name;
+        }
+
+        foreach(T e in records)
+        {
+            s += "\n";
+            for(int x=0; x<fieldInfos.Length; x++)
+            {
+                if (x > 0)
+                    s += ",";
+                s += fieldInfos[x].GetValue(e);
+            }
+        }
+
+        return s;
     }
 
     private List<List<string>> SplitCSVFile(string textInput)
@@ -90,5 +136,31 @@ public abstract class ASDataTable<T> : ASDataTableOrigin where T : class
         }
 
         return results.ToArray();
+    }
+
+    public T GetRecordByKeySearch(object key)
+    {
+        T item = recordCompare.SetKeySearch(key);
+        int index = records.BinarySearch(item, recordCompare);
+
+        return CopyData(records[index]);
+    }
+
+    private T CopyData(object data)
+    {
+        string s = JsonUtility.ToJson(data);
+        return JsonUtility.FromJson<T>(s);
+    }
+
+    public List<T> GetAll()
+    {
+        List<T> ls = new List<T>();
+        for(int i=0; i<records.Count; i++)
+        {
+            string s = JsonUtility.ToJson(records[i]);
+            ls.Add(JsonUtility.FromJson<T>(s));
+        }
+
+        return ls;
     }
 }
