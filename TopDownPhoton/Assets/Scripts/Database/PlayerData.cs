@@ -1,18 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class PlayerData : MonoBehaviour
+[Serializable]
+public class PlayerData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    public PlayerInfo playerInfo = new PlayerInfo();
+    [SerializeField]
+    public PlayerInventory playerInventory = new PlayerInventory();
+    [SerializeField]
+    public Dictionary<string, WeaponData> weapons = new Dictionary<string, WeaponData>();
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[Serializable]
+public class PlayerInfo
+{
+    public string username;
+    public int exp;
+    public int level;
+    public int idGun;
+    public int idSkin;
+}
+
+[Serializable]
+public class PlayerInventory
+{    
+    public int cash;
+    public int gold;
+}
+
+[Serializable]
+public class WeaponData
+{
+    public int id;
+    public int level;
 }

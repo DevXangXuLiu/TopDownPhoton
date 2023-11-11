@@ -10,7 +10,10 @@ public class BootLoaderControl : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         ConfigManager.instance.InitConfig(() =>
         {
+            DataAPIController.instance.OnInit(() =>
+            {
 
+            });
         });
     }
 }
