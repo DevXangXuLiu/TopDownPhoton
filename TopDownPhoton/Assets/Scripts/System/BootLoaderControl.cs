@@ -12,7 +12,8 @@ public class BootLoaderControl : MonoBehaviour
         {
             DataAPIController.instance.OnInit(() =>
             {
-
+                ViewManager.instance.OnSwitchView(ViewIndex.HomeView);
+                SceneManager.LoadSceneAsync(1);
             });
         });
     }
