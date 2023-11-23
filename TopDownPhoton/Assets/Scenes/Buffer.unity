@@ -1429,7 +1429,7 @@ Animator:
   m_GameObject: {fileID: 5596475241581298691}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 5dfc4a565abb41240bf6e4d862b16247, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a969629892f72624daf0c3d723b5a61e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -6367,8 +6367,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5596475241581571121}
   - component: {fileID: 5596475241572067781}
+  - component: {fileID: 5596475241581571122}
   m_Layer: 0
-  m_Name: Skin_1
+  m_Name: CharacterUISkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8082,8 +8083,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5596475241581298691}
-  m_LocalRotation: {x: -0, y: 0.98531103, z: -0, w: 0.17076956}
-  m_LocalPosition: {x: -1.1141258, y: 0, z: 3.9992847}
+  m_LocalRotation: {x: -0, y: 0.95399636, z: -0, w: 0.29981828}
+  m_LocalPosition: {x: -1.55, y: 0, z: 4.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8162,7 +8163,21 @@ Transform:
   - {fileID: 5596475241581526111}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 160.335, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 145.107, z: 0}
+--- !u!114 &5596475241581571122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596475241581298691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452c3d07353083546a5bd849efb87aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 5596475241572067781}
+  gunAnchor: {fileID: 5596475241581567267}
 --- !u!4 &5596475241581572225
 Transform:
   m_ObjectHideFlags: 0
