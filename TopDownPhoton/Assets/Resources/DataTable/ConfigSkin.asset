@@ -27,7 +27,7 @@ MonoBehaviour:
     extra: extra_equip_B
     body: Body_B
     leg: Legs_B
-    hp: 200
+    hp: 250
     prefab: Skin_2
   - id: 3
     name: C1C
@@ -35,7 +35,7 @@ MonoBehaviour:
     extra: extra_equip_C
     body: Body_K
     leg: Legs_C
-    hp: 200
+    hp: 300
     prefab: Skin_3
   - id: 4
     name: D1PACK
@@ -43,7 +43,7 @@ MonoBehaviour:
     extra: extra_light_backpack
     body: Body_J
     leg: Legs_A
-    hp: 200
+    hp: 220
     prefab: Skin_4
   - id: 5
     name: E1PACK
@@ -51,5 +51,5 @@ MonoBehaviour:
     extra: extra_backpack
     body: Body_I
     leg: Legs_B
-    hp: 200
+    hp: 280
     prefab: Skin_5

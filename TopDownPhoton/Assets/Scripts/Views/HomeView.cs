@@ -66,12 +66,12 @@ public class HomeView : BaseView
 
     public void OnGunSelect()
     {
-
+        DialogManager.instance.ShowDialog(DialogIndex.DialogGunSelect);
     }
 
     public void OnSkinSelect()
     {
-
+        DialogManager.instance.ShowDialog(DialogIndex.DialogSkinSelect);
     }
 
     public void SetGunInfo(int id)
